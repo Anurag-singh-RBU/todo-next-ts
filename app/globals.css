@@ -1,26 +1,228 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;700;900&family=Urbanist:wght@300;600&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*{
+
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html{
+    font-size: 62.5%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+a{
+    text-decoration: none;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+li{
+    list-style: none;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 10rem;
+}
+
+main h2{
+    font-size: 3rem;
+    font-family: 'Lexend Deca', sans-serif;
+    margin-bottom: 4.8rem;
+}
+
+main h2 .icons{
+    color: #68B984;
+}
+
+
+nav{
+    width:55rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: .1rem solid #ccc;
+}
+
+nav a{
+    font-size: 2rem;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #ccc;
+    border-bottom: .3rem solid transparent;
+}
+
+nav a:hover{
+    border-color: #3A3845;
+}
+
+nav a.active {
+    color: #000;
+    border-color: #68B984;
+}
+
+
+form input{
+    border: .1rem solid #ccc;
+    border-radius: .3rem;
+    width: 45rem;
+    margin: 4rem 0;
+    user-select: none;
+    padding: .6rem 1rem;
+    font-size: 1.6rem;
+    letter-spacing: .06rem;
+    font-weight: bold;
+}
+
+form button{
+    padding: .8rem 2.8rem;
+    border: none;
+    border-radius: .3rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 2.4rem;
+     background-color: #68B984;
+     color: #fff;
+}
+
+label{
+    font-size: 1.5rem;
+    letter-spacing: .06rem;
+    color: #3A3845;
+    font-weight: bold;
+}
+
+
+.main-task li{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    width:550px;
+    min-height: 6rem;
+    border: .1rem solid #ccc;
+    margin-right: 30px;
+    margin-left: -10px;
+}
+
+.main-task li:first-child{
+    border-top: .1rem solid #ccc;
+}
+
+.main-task li:hover{
+    background-color: #fef2f2;
+}
+
+.main-task li input[type="checkbox"]:checked  + label {
+    text-decoration: line-through;
+    color: #D14D72;
+}
+
+.main-task li button{
+    padding: .6rem 1rem;
+    width: 7rem;
+    background-color: #D14D72;
+    color: #FFF9F9;
+    border:none;
+    display: inline-block;
+    cursor: pointer;
+    justify-self: center;
+    letter-spacing: .1rem;
+}
+
+@media (max-width: 600px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    main {
+        margin-top: 5rem;
+        padding: 0 1.6rem;
+        align-items: center; /* Center content horizontally */
+    }
+
+    main h2 {
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: space-around;
+        padding: 0 1rem;
+    }
+
+    nav a {
+        font-size: 1.8rem;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    form input {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    form button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .main-task {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .main-task li {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        border: 0.1rem solid #ccc;
+        border-radius: 0.4rem;
+        background: #fff;
+        margin-top: 30px;
+    }
+
+    .main-task li label {
+        font-size: 1.6rem;
+    }
+
+    .main-task li button {
+        width: auto;
+        padding: .6rem 1.2rem;
+    }
+}
+
+.todo-title {
+    width: 100%;
+    font-family: 'Lexend Deca', sans-serif;
+    text-align: center;
+    margin-top: 30px; 
+    font-size: 2.4rem;
+    font-weight: bolder;
+    margin-bottom: -50px;
+}
+
+@media (max-width: 600px){
+
+    .todo-title{
+
+        margin-top: 30px;
+        margin-bottom: 0px
+        ;
+
+    }
+
 }
